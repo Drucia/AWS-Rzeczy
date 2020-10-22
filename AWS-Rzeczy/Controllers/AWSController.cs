@@ -1,8 +1,7 @@
 ﻿using System.Threading.Tasks;
+using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.Runtime;
-using Amazon.SecurityToken;
-using Amazon.SecurityToken.Model;
 using AWS_Rzeczy.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,16 +13,16 @@ namespace AWS_Rzeczy.Controllers
     public class AWSController : ControllerBase
     {
         private readonly ILogger<AWSController> _logger;
-        private readonly AmazonDynamoDBConfig _clientConfig;
+        private readonly IAmazonDynamoDB _dynamoClient;
 
         // -- SERVICES -- //
         private DynamoDBService _dynamoService;
 
-        public AWSController(ILogger<AWSController> logger)
+        public AWSController(ILogger<AWSController> logger, IAmazonDynamoDB amazonDynamoDBClient)
         {
             _logger = logger;
-            _clientConfig = new AmazonDynamoDBConfig();
-            _clientConfig.ServiceURL = "http://localhost:8000";
+            _dynamoClient = amazonDynamoDBClient;
+            _dynamoService = new DynamoDBService(_dynamoClient);
         }
 
         // Script 1 - Druciak
@@ -31,9 +30,6 @@ namespace AWS_Rzeczy.Controllers
         [Route("createtable")]
         public async Task<string> CreateClientTable()
         {
-            SessionAWSCredentials tempCredentials = await GetTemporaryCredentialsAsync();
-            _dynamoService = new DynamoDBService(new AmazonDynamoDBClient(tempCredentials, _clientConfig));
-
             return await _dynamoService.createClientTableAsync();
         }
 
@@ -51,26 +47,26 @@ namespace AWS_Rzeczy.Controllers
         //    //.ToArray();
         //}
 
-        private static async Task<SessionAWSCredentials> GetTemporaryCredentialsAsync()
-        {
-            using (var stsClient = new AmazonSecurityTokenServiceClient())
-            {
-                var getSessionTokenRequest = new GetSessionTokenRequest
-                {
-                    DurationSeconds = 7200 // seconds
-                };
+        //private static async Task<SessionAWSCredentials> GetTemporaryCredentialsAsync()
+        //{
+        //    using (var stsClient = new AmazonSecurityTokenServiceClient())
+        //    {
+        //        var getSessionTokenRequest = new GetSessionTokenRequest
+        //        {
+        //            DurationSeconds = 7200 // seconds
+        //        };
 
-                GetSessionTokenResponse sessionTokenResponse =
-                              await stsClient.GetSessionTokenAsync(getSessionTokenRequest);
+        //        GetSessionTokenResponse sessionTokenResponse =
+        //                      await stsClient.GetSessionTokenAsync(getSessionTokenRequest);
 
-                Credentials credentials = sessionTokenResponse.Credentials;
+        //        Credentials credentials = sessionTokenResponse.Credentials;
 
-                var sessionCredentials =
-                    new SessionAWSCredentials(credentials.AccessKeyId,
-                                              credentials.SecretAccessKey,
-                                              credentials.SessionToken);
-                return sessionCredentials;
-            }
-        }
+        //        var sessionCredentials =
+        //            new SessionAWSCredentials(credentials.AccessKeyId,
+        //                                      credentials.SecretAccessKey,
+        //                                      credentials.SessionToken);
+        //        return sessionCredentials;
+        //    }
+        //}
     }
 }

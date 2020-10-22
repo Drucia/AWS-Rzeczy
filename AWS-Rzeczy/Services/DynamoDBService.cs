@@ -9,24 +9,25 @@ namespace AWS_Rzeczy.Services
 {
     public class DynamoDBService
     {
-        private AmazonDynamoDBClient _dynamoClient;
+        private IAmazonDynamoDB _dynamoClient;
 
-        public DynamoDBService(AmazonDynamoDBClient amazonDynamoDBClient)
+        public DynamoDBService(IAmazonDynamoDB dynamoClient)
         {
-            _dynamoClient = amazonDynamoDBClient;
+            _dynamoClient = dynamoClient;
         }
+
+        public IAmazonDynamoDB DynamoClient { get; }
 
         public async Task<string> createClientTableAsync()
         {
             var attributes = new List<AttributeDefinition>() { 
-                new AttributeDefinition { AttributeName = "login", AttributeType = "String" },
-                new AttributeDefinition { AttributeName = "password", AttributeType = "String" },
-                new AttributeDefinition { AttributeName = "name", AttributeType = "String" },
-                new AttributeDefinition { AttributeName = "age", AttributeType = "Number" },
+                new AttributeDefinition { AttributeName = "login", AttributeType = "S" }
             };
             var req = new CreateTableRequest
             {
                 TableName = "Client",
+                KeySchema = new List<KeySchemaElement>() {
+                    new KeySchemaElement { AttributeName = "login", KeyType = KeyType.HASH }},
                 AttributeDefinitions = attributes,
                 ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 10000L, WriteCapacityUnits = 10000L }
             };

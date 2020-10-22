@@ -1,3 +1,6 @@
+using Amazon;
+using Amazon.DynamoDBv2;
+using Amazon.Runtime;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +29,15 @@ namespace AWS_Rzeczy
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            //services.Configure<MyAWSCredentials>(Configuration.GetSection("AWScredentials"));
+            var awsCredentials = Configuration.GetSection("AWScredentials").Get<AWSCredentials>();
+            var sessionCredentials = new SessionAWSCredentials(awsCredentials.AccessKey, awsCredentials.SecretKey, awsCredentials.SessionToken);
+
+            var region = RegionEndpoint.USEast1; // The US East (Virginia) endpoint
+
+            // AWS clients
+            services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>(_ => new AmazonDynamoDBClient(sessionCredentials, region));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
