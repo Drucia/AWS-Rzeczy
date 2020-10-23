@@ -1,10 +1,15 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Reflection.PortableExecutable;
+using System.Threading.Tasks;
 using Amazon;
 using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using AWS_Rzeczy.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
 
 namespace AWS_Rzeczy.Controllers
 {
@@ -26,47 +31,76 @@ namespace AWS_Rzeczy.Controllers
         }
 
         // Script 1 - Druciak
-        [HttpGet]
-        [Route("createtable")]
-        public async Task<string> CreateClientTable()
+        [HttpPost]
+        [Route("createtable/{name}")]
+        public async Task<ActionResult> CreateClientTable(string name)
         {
-            return await _dynamoService.createClientTableAsync();
+            var res = await _dynamoService.createClientTableAsync(name);
+            if (res.WasSuccessful)
+                return Ok(new { msg = res.Value });
+            return BadRequest(new {msg = res.ErrorMsg});
         }
 
-        //[HttpGet]
-        //[Route("druciak/dynamodbcrud")]
-        //public IEnumerable<Client> GetAll()
-        //{
+        // Script 1 - Druciak
+        [HttpDelete]
+        [Route("deletetable/{name}")]
+        public async Task<ActionResult> DeleteClientTable(string name)
+        {
+            var res = await _dynamoService.deleteClientTableIfExistAsync(name);
+            if (res.WasSuccessful)
+                return Ok(new { msg = res.Value });
+            return BadRequest(new { msg = res.ErrorMsg });
+        }
 
-        //    //return Enumerable.Range(1, 5).Select(index => new Client
-        //    //{
-        //    //    Date = DateTime.Now.AddDays(index),
-        //    //    TemperatureC = rng.Next(-20, 55),
-        //    //    Summary = Summaries[rng.Next(Summaries.Length)]
-        //    //})
-        //    //.ToArray();
-        //}
+        [HttpPost]
+        [Route("createclients")]
+        public async Task<ActionResult> CreateClients([FromBody] IEnumerable<Client> clients)
+        {
+            //var res = await _dynamoService.createClientList(clients);
+            //if (res.WasSuccessful)
+            //    return Ok(res.Value);
+            return BadRequest(new { msg = "a" });
+        }
 
-        //private static async Task<SessionAWSCredentials> GetTemporaryCredentialsAsync()
-        //{
-        //    using (var stsClient = new AmazonSecurityTokenServiceClient())
-        //    {
-        //        var getSessionTokenRequest = new GetSessionTokenRequest
-        //        {
-        //            DurationSeconds = 7200 // seconds
-        //        };
+        [HttpGet]
+        [Route("clients")]
+        public async Task<ActionResult<IEnumerable<Client>>> GetAllClients()
+        {
+            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
+            //if (res.WasSuccessful)
+            //    return Ok(res.Value);
+            return BadRequest(new { msg = res.ErrorMsg });
+        }
 
-        //        GetSessionTokenResponse sessionTokenResponse =
-        //                      await stsClient.GetSessionTokenAsync(getSessionTokenRequest);
+        [HttpPost]
+        [Route("clients")]
+        public async Task<ActionResult<Client>> CreateClient([FromBody] Client client)
+        {
+            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
+            //if (res.WasSuccessful)
+            //    return Ok(res.Value);
+            return BadRequest(new { msg = res.ErrorMsg });
+        }
 
-        //        Credentials credentials = sessionTokenResponse.Credentials;
+        [HttpPost]
+        [Route("clients/{login}")]
+        public async Task<ActionResult<Client>> UpdateClient(string login, [FromBody] Client client)
+        {
+            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
+            //if (res.WasSuccessful)
+            //    return Ok(res.Value);
+            client.Age += 1;
+            return BadRequest(new { msg = res.ErrorMsg });
+        }
 
-        //        var sessionCredentials =
-        //            new SessionAWSCredentials(credentials.AccessKeyId,
-        //                                      credentials.SecretAccessKey,
-        //                                      credentials.SessionToken);
-        //        return sessionCredentials;
-        //    }
-        //}
+        [HttpDelete]
+        [Route("clients/{login}")]
+        public async Task<ActionResult<string>> UpdateClient(string login)
+        {
+            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
+            //if (res.WasSuccessful)
+            //    return Ok(res.Value);
+            return BadRequest(new { msg = res.ErrorMsg });
+        }
     }
 }
