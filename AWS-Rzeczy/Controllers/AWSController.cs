@@ -79,22 +79,22 @@ namespace AWS_Rzeczy.Controllers
         // Script 1 - Druciak
         [HttpPost]
         [Route("clients")]
-        public async Task<ActionResult<Client>> CreateClient([FromBody] Client client)
+        public async Task<ActionResult> CreateClient([FromBody] Client client)
         {
             var res = await _dynamoService.addClient(client);
             if (res.WasSuccessful)
-                return Ok(res.Value);
+                return Ok(new { msg = res.Value });
             return BadRequest(new { msg = res.ErrorMsg });
         }
 
         // Script 1 - Druciak
         [HttpPost]
         [Route("clients/{login}")]
-        public async Task<ActionResult<Client>> UpdateClient(string login, [FromBody] Client client)
+        public async Task<ActionResult> UpdateClient(string login, [FromBody] Client client)
         {
             var res = await _dynamoService.editClient(login, client);
             if (res.WasSuccessful)
-                return Ok(res.Value);
+                return Ok(new { msg = res.Value } );
 
             return BadRequest(new { msg = res.ErrorMsg });
         }
@@ -102,11 +102,11 @@ namespace AWS_Rzeczy.Controllers
         // Script 1 - Druciak
         [HttpDelete]
         [Route("clients/{login}")]
-        public async Task<ActionResult<Client>> DeleteClient(string login)
+        public async Task<ActionResult> DeleteClient(string login)
         {
             var res = await _dynamoService.deleteClient(login);
             if (res.WasSuccessful)
-                return Ok(res.Value);
+                return Ok(new { msg = res.Value });
 
             return BadRequest(new { msg = res.ErrorMsg });
         }
