@@ -8,7 +8,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class HomeComponent {
   public logs = ["nananna"];
-  private tableName: string = "client"
 
   private clients: Client[] = [new Client("log", "haselko", "Ola", 23), new Client("log2", "haselko2", "Maciej", 30), new Client("log3", "haselko3", "Kasia", 11)];
 
@@ -18,37 +17,45 @@ export class HomeComponent {
   public runScriptWithCRUDDB() {
     this.logs = [];
     this.deleteClientTableIfExist();
-    this.createClientTable();
-    this.createClientList();
-    this.getAllClients();
-    this.updateFirstClient();
-    this.getAllClients();
-    this.addClient()
-    this.getAllClients();
-    this.deleteLastClient();
-    this.getAllClients();
+    //this.createClientTable();
+    //this.createClientList();
+    //this.getAllClients();
+
+    //this.updateFirstClient();
+    //this.getAllClients();
+    //this.addClient()
+    //this.getAllClients();
+    //this.deleteLastClient();
+    //this.getAllClients();
   }
 
   deleteClientTableIfExist() {
-    this.http.delete<Message>(this.baseUrl + `api/deletetable/${this.tableName}`).subscribe(result => {
+    this.logs.push("Deleting CLIENT table if exist...");
+    this.http.delete<Message>(this.baseUrl + `api/clients/deletetable`).subscribe(result => {
       this.logs.push(result.msg);
+      this.createClientTable();
     },
       error => console.error(error));
   }
 
   createClientTable() {
-    this.http.post<Message>(this.baseUrl + `api/createtable/${this.tableName}`, null).subscribe(result => {
-      this.logs.push(result.msg);
+    this.logs.push("Creating CLIENT table...");
+    this.http.post<Message>(this.baseUrl + `api/clients/createtable`, null).subscribe(result => {
+      this.logs.push(`Created ${result.msg} table.`);
+      this.createClientList();
       }, error => console.error(error));
   }
 
   createClientList() {
-    this.http.post<Message>(this.baseUrl + `api/createclients`, this.clients).subscribe(result => {
+    this.logs.push("Adding start client list...");
+    this.http.post<Message>(this.baseUrl + `api/clients/createclients`, this.clients).subscribe(result => {
       this.logs.push(result.msg);
+      this.getAllClients();
     }, error => console.error(error));
   }
 
   getAllClients() {
+    this.logs.push("Getting all clients...");
     this.http.get<Client[]>(this.baseUrl + 'api/clients').subscribe(result => {
       this.clients = result;
       result.forEach(function (client) { this.logs += client.toString(); });
@@ -56,6 +63,7 @@ export class HomeComponent {
   }
 
   updateFirstClient() {
+    this.logs.push("Updating first client...");
     var toUpdate = this.clients[0];
     toUpdate.age += 1;
     this.http.post<Client>(this.baseUrl + `api/clients/${toUpdate.login}`, toUpdate).subscribe(result => {
@@ -65,6 +73,7 @@ export class HomeComponent {
   }
 
   addClient() {
+    this.logs.push("Adding new client...");
     let client: Client = {
       login: "newClient",
       password: "haselko",
@@ -78,6 +87,7 @@ export class HomeComponent {
   }
 
   deleteLastClient() {
+    this.logs.push("Deleting last client...");
     var toDelete = this.clients[this.clients.length - 1];
     this.http.delete<Message>(this.baseUrl + `api/clients/${toDelete.login}`).subscribe(result => {
       this.clients.pop();

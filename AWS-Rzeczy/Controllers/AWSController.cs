@@ -32,74 +32,82 @@ namespace AWS_Rzeczy.Controllers
 
         // Script 1 - Druciak
         [HttpPost]
-        [Route("createtable/{name}")]
-        public async Task<ActionResult> CreateClientTable(string name)
+        [Route("clients/createtable")]
+        public async Task<ActionResult> CreateClientTable()
         {
-            var res = await _dynamoService.createClientTableAsync(name);
+            var res = await _dynamoService.createClientTableAsync();
             if (res.WasSuccessful)
                 return Ok(new { msg = res.Value });
+            else if (res.ErrorMsg.Contains("repeat"))
+                return await CreateClientTable();
             return BadRequest(new {msg = res.ErrorMsg});
         }
 
         // Script 1 - Druciak
         [HttpDelete]
-        [Route("deletetable/{name}")]
-        public async Task<ActionResult> DeleteClientTable(string name)
+        [Route("clients/deletetable")]
+        public async Task<ActionResult> DeleteClientTable()
         {
-            var res = await _dynamoService.deleteClientTableIfExistAsync(name);
+            var res = await _dynamoService.deleteClientTableIfExistAsync();
             if (res.WasSuccessful)
                 return Ok(new { msg = res.Value });
             return BadRequest(new { msg = res.ErrorMsg });
         }
 
+        // Script 1 - Druciak
         [HttpPost]
-        [Route("createclients")]
+        [Route("clients/createclients")]
         public async Task<ActionResult> CreateClients([FromBody] IEnumerable<Client> clients)
         {
-            //var res = await _dynamoService.createClientList(clients);
-            //if (res.WasSuccessful)
-            //    return Ok(res.Value);
-            return BadRequest(new { msg = "a" });
+            var res = await _dynamoService.createClientList(clients);
+            if (res.WasSuccessful)
+                return Ok(new { msg = res.Value });
+            return BadRequest(new { msg = res.ErrorMsg });
         }
 
+        // Script 1 - Druciak
         [HttpGet]
         [Route("clients")]
         public async Task<ActionResult<IEnumerable<Client>>> GetAllClients()
         {
-            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
-            //if (res.WasSuccessful)
-            //    return Ok(res.Value);
+            var res = await _dynamoService.getAllClients();
+            if (res.WasSuccessful)
+                return Ok(res.Value);
             return BadRequest(new { msg = res.ErrorMsg });
         }
 
+        // Script 1 - Druciak
         [HttpPost]
         [Route("clients")]
         public async Task<ActionResult<Client>> CreateClient([FromBody] Client client)
         {
-            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
-            //if (res.WasSuccessful)
-            //    return Ok(res.Value);
+            var res = await _dynamoService.addClient(client);
+            if (res.WasSuccessful)
+                return Ok(res.Value);
             return BadRequest(new { msg = res.ErrorMsg });
         }
 
+        // Script 1 - Druciak
         [HttpPost]
         [Route("clients/{login}")]
         public async Task<ActionResult<Client>> UpdateClient(string login, [FromBody] Client client)
         {
-            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
-            //if (res.WasSuccessful)
-            //    return Ok(res.Value);
-            client.Age += 1;
+            var res = await _dynamoService.editClient(login, client);
+            if (res.WasSuccessful)
+                return Ok(res.Value);
+
             return BadRequest(new { msg = res.ErrorMsg });
         }
 
+        // Script 1 - Druciak
         [HttpDelete]
         [Route("clients/{login}")]
-        public async Task<ActionResult<string>> UpdateClient(string login)
+        public async Task<ActionResult<Client>> DeleteClient(string login)
         {
-            //var res = await _dynamoService.deleteClientTableIfExistAsync(name);
-            //if (res.WasSuccessful)
-            //    return Ok(res.Value);
+            var res = await _dynamoService.deleteClient(login);
+            if (res.WasSuccessful)
+                return Ok(res.Value);
+
             return BadRequest(new { msg = res.ErrorMsg });
         }
     }
