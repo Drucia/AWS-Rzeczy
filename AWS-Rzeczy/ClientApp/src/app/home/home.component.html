@@ -1,16 +1,20 @@
-<h1>Hello in scripts which are using AWS!</h1>
-<br />
-<h5>Scripts by Druciak:</h5>
-<button type="button" class="btn btn-primary" (click)="runScriptWithCRUDDB()">1. Script with CRUD BD</button>
-<br />
-<br />
-<h5>Scripts by Gerasimuk:</h5>
-<br />
-<br />
-<h5>Scripts by Demczuk:</h5>
-<br />
-<br />
-<h5>Logs info:</h5>
-<div *ngFor="let log of logs">
-  <i>{{ log }}</i>  
+<div class="home">
+    <h1>Hello in scripts which are using AWS!</h1>
+    <br />
+    <h5>Scripts by Druciak:</h5>
+    <button type="button"
+            class="btn btn-primary"
+            (click)="runScriptWithCRUDDB()">1. Script with CRUD BD</button>
+    <br />
+    <br />
+    <h5>Scripts by Gerasimuk:</h5>
+    <br />
+    <br />
+    <h5>Scripts by Demczuk:</h5>
+    <br />
+    <br />
+    <h5>Logs info:</h5>
+    <div *ngFor="let log of logs">
+        <i>{{ log }}</i>
+    </div>
 </div>
