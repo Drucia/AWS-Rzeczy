@@ -11,8 +11,42 @@
     <br />
     <br />
     <h5>Scripts by Demczuk:</h5>
-    <br />
-    <br />
+    <div>
+        <input style="margin-left: 10px;"
+               type="text"
+               [(ngModel)]="bucketName"
+               disabled={{created}}
+               placeholder="Bucket name" />
+        <input style="margin-left: 10px;"
+               type="text"
+               disabled={{uploaded}}
+               [(ngModel)]="key1"
+               placeholder="Key 1" />
+        <input style="margin-left: 10px;"
+               type="text"
+               disabled={{uploaded}}
+               [(ngModel)]="key2"
+               placeholder="Key 2" />
+    </div>
+    <div style="margin-top: 10px;">
+        <button type="button"
+                class="btn btn-primary"
+                
+                style="margin-left: 10px;"
+                (click)="CreateBucket()">Create bucket</button>
+        <button type="button"
+                class="btn btn-success"
+                style="margin-left: 10px;"
+                (click)="UploadToBucket()">Upload to bucket</button>
+        <button type="button"
+                class="btn btn-info"
+                style="margin-left: 10px;"
+                (click)="GetFromBucket()">Get from bucket</button>
+        <button type="button"
+                class="btn btn-danger"
+                style="margin-left: 10px;"
+                (click)="DeleteFromBucket()">Delete from bucket</button>
+    </div>
     <h5>Logs info:</h5>
     <div *ngFor="let log of logs">
         <i>{{ log }}</i>

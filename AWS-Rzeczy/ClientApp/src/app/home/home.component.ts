@@ -1,6 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Tomek } from '../tomek';
+import { Client } from './Client';
+import { Message } from './Message';
+import { AWSService } from '../aws.service';
+import { S3RquestBody } from './S3RquestBody';
 
 @Component({
     selector: 'app-home',
@@ -12,15 +15,43 @@ export class HomeComponent {
     public logs = ["nananna"];
 
     private clients: Client[] = [new Client("log", "haselko", "Ola", 23), new Client("log2", "haselko2", "Maciej", 30), new Client("log3", "haselko3", "Kasia", 11)];
+    private bucketName: string;
+    private key1: string;
+    private key2: string;
+    private created: boolean = false;
+    private uploaded: boolean = false;
 
-    constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+    constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private awsService: AWSService) {
     }
 
-    public Run() {
-        Tomek aws = new Tomek();
 
+    public CreateBucket() {
+        this.created = true;
+        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        this.awsService.CreateBucket(body).subscribe(result => {
+            this.logs.push(result);
+        })
     }
+    public UploadToBucket() {
 
+        this.uploaded = true;
+        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        this.awsService.UploadToBucket(body).subscribe(result => {
+            this.logs.push(result);
+        })
+    }
+    public GetFromBucket() {
+        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        this.awsService.GetFromBucket(body).subscribe(result => {
+            this.logs.push(result);
+        })
+    }
+    public DeleteFromBucket() {
+        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        this.awsService.DeleteFromBucket(body).subscribe(result => {
+            this.logs.push(result);
+        })
+    }
     public runScriptWithCRUDDB() {
         this.logs = [];
         this.deleteClientTableIfExist();
@@ -113,24 +144,6 @@ export class HomeComponent {
             this.getAllClients(() => this.logs.push("---KONIEC---"));
         }, error => console.error(error));
     }
-}
-
-export class Client {
-    public login: string;
-    public password: string;
-    public name: string;
-    public age: number;
-
-    constructor(log, pass, name, age) {
-        this.login = log;
-        this.password = pass;
-        this.name = name;
-        this.age = age;
-    }
-}
-
-export class Message {
-    public msg: string;
 }
 
 

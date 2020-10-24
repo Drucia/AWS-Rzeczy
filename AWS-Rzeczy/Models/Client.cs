@@ -1,7 +1,6 @@
 using Amazon.DynamoDBv2.Model;
 using AWS_Rzeczy.Services;
 using Microsoft.VisualBasic.CompilerServices;
-using System;
 using System.Collections.Generic;
 
 namespace AWS_Rzeczy

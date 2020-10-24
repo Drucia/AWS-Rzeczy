@@ -1,9 +1,10 @@
 using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.Runtime;
+using Amazon.S3;
+using AWS_Rzeczy.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,8 +37,10 @@ namespace AWS_Rzeczy
 
             var region = RegionEndpoint.USEast1; // The US East (Virginia) endpoint
 
-            // AWS clients
+            // AWS clients DI
             services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>(_ => new AmazonDynamoDBClient(sessionCredentials, region));
+            services.AddTransient<IAmazonS3, AmazonS3Client>(_ => new AmazonS3Client(sessionCredentials, region));
+            services.AddTransient<IS3Service, S3Service>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
