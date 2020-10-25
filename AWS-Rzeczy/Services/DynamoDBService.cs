@@ -43,6 +43,7 @@ namespace AWS_Rzeczy.Services
             try
             {
                 var response = await _dynamoClient.CreateTableAsync(req);
+                Thread.Sleep(3000);
 
                 return Holder<string>.Success(response.TableDescription.TableName);
 
