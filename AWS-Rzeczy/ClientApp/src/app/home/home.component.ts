@@ -52,97 +52,105 @@ export class HomeComponent {
             this.logs.push(result);
         })
     }
-    public runScriptWithCRUDDB() {
+
+    public deleteClientTable()
+    {
         this.logs = [];
-        this.deleteClientTableIfExist();
-        //this.createClientTable();
-        //this.createClientList();
-        //this.getAllClients();
-
-        //this.updateFirstClient();
-        //this.getAllClients();
-        //this.addClient()
-        //this.getAllClients();
-        //this.deleteLastClient();
-        //this.getAllClients();
-    }
-
-    deleteClientTableIfExist() {
         this.logs.push("-> Deleting CLIENT table if exist...");
-        this.http.delete<Message>(this.baseUrl + `api/clients/deletetable`).subscribe(result => {
-            this.logs.push(result.msg);
-            this.createClientTable();
-        },
+        this.http.delete<Message>(this.baseUrl + `api/clients/deletetable`).subscribe(
+            result => {
+              this.logs.push(result.msg);
+            },
+            error => console.error(error));
+    }
+    
+    public createClientTable()
+    {
+      this.logs = [];
+        this.logs.push("-> Creating CLIENT table...");
+        this.http.post<Message>(this.baseUrl + `api/clients/createtable`, null).subscribe(
+            result => {
+                this.logs.push(`Created ${result.msg} table.`);
+            },
             error => console.error(error));
     }
 
-    createClientTable() {
-        this.logs.push("-> Creating CLIENT table...");
-        this.http.post<Message>(this.baseUrl + `api/clients/createtable`, null).subscribe(result => {
-            this.logs.push(`Created ${result.msg} table.`);
-            this.createClientList();
-        }, error => console.error(error));
-    }
-
-    createClientList() {
+    public insertClientsList()
+    {
+        this.logs = [];
         this.logs.push("-> Adding start client list...");
-        this.http.post<Message>(this.baseUrl + `api/clients/createclients`, this.clients).subscribe(result => {
-            this.logs.push(result.msg);
-            this.getAllClients(() => this.updateFirstClient());
-        }, error => console.error(error));
+        this.http.post<Message>(this.baseUrl + `api/clients/createclients`, this.clients).subscribe(
+            result => {
+                this.logs.push(result.msg);
+            },
+            error => console.error(error));
     }
 
-    getAllClients(nextFunction: () => void) {
+    public getAllClients()
+    {
+        this.logs = [];
         this.logs.push("-> Getting all clients...");
-        this.http.get<Client[]>(this.baseUrl + 'api/clients').subscribe((result) => {
-            this.clients = result;
-            this.logs.push(`Amount of clients: ${result.length}`);
-            this.clients.forEach(client => this.logs.push(this.toString(client)));
-            nextFunction();
-        }, error => console.error(error));
+        this.http.get<Client[]>(this.baseUrl + 'api/clients').subscribe(
+            result => {
+                this.clients = result;
+                this.logs.push(`Amount of clients: ${result.length}`);
+                this.clients.forEach(client => this.logs.push(this.toString(client)));
+            },
+            error => console.error(error));
     }
 
-    toString(client) {
+    private toString(client)
+    {
         return `login: ${client.login}, password: ${client.password}, name: ${client.name}, age: ${client.age}`;
     }
 
-    updateFirstClient() {
+    public updateFirstClient()
+    {
+        this.logs = [];
         this.logs.push("-> Updating first client...");
         var toUpdate = this.clients[0];
         toUpdate.age += 1;
-        this.http.post<Message>(this.baseUrl + `api/clients/${toUpdate.login}`, toUpdate).subscribe(result => {
-            //this.clients[0] = result;
-            //this.logs.push(`Updated "${result.login}" age to ${result.age}`);
-            this.logs.push(result.msg);
-            this.getAllClients(() => this.addClient());
-        }, error => console.error(error));
+
+        this.http.post<Client>(this.baseUrl + `api/clients/${toUpdate.login}`, toUpdate).subscribe(
+            result => {
+                this.clients[0] = result;
+                this.logs.push(`Updated "${result.login}" age to ${result.age}`);
+                //this.logs.push(result.msg);
+            },
+            error => console.error(error));
     }
 
-    addClient() {
+    public addNewClient()
+    {
+        this.logs = [];
         this.logs.push("-> Adding new client...");
         let client: Client = {
             login: "newClient",
             password: "haselko",
             name: "Alabama",
             age: 20
-        }
-        this.http.post<Message>(this.baseUrl + 'api/clients', client).subscribe(result => {
+      }
+        this.http.post<Message>(this.baseUrl + 'api/clients', client).subscribe(
+            result => {
             //this.clients.push(result);
-            //this.logs.push(`Added new client: ${result.toString()}`);
-            this.logs.push(result.msg);
-            this.getAllClients(() => this.deleteLastClient());
-        }, error => console.error(error));
+            //this.logs.push(`Added new client: ${this.toString(result)}`);
+                this.logs.push(result.msg);
+            },
+            error => console.error(error));
     }
 
-    deleteLastClient() {
+    public deleteLastClient()
+    {
+        this.logs = [];
         this.logs.push("-> Deleting last client...");
         var toDelete = this.clients[this.clients.length - 1];
-        this.http.delete<Message>(this.baseUrl + `api/clients/${toDelete.login}`).subscribe(result => {
-            //this.clients.pop();
-            //this.logs.push(result.msg);
-            this.logs.push(result.msg);
-            this.getAllClients(() => this.logs.push("---KONIEC---"));
-        }, error => console.error(error));
+
+        this.http.delete<Client>(this.baseUrl + `api/clients/${toDelete.login}`).subscribe(
+            result => {
+                this.clients.pop();
+                this.logs.push(`Deleted client: ${this.toString(result)}`);
+            },
+            error => console.error(error));
     }
 }
 

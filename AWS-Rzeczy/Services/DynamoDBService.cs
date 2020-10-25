@@ -43,7 +43,6 @@ namespace AWS_Rzeczy.Services
             try
             {
                 var response = await _dynamoClient.CreateTableAsync(req);
-                Thread.Sleep(13000);
 
                 return Holder<string>.Success(response.TableDescription.TableName);
 
@@ -124,15 +123,13 @@ namespace AWS_Rzeczy.Services
             var request = new PutItemRequest
             {
                 TableName = TABLE_NAME,
-                Item = ClientRequestMaker.makePutRequestFromClient(client).PutRequest.Item
+                Item = ClientRequestMaker.makePutRequestFromClient(client).PutRequest.Item,
             };
 
             try
             {
                 var response = await _dynamoClient.PutItemAsync(request);
-                //var clientResponse = response.Attributes;
 
-                //return Holder<Client>.Success(Client.makeFromAWSResponse(clientResponse));
                 return Holder<string>.Success("Addedd client");
             } catch (Exception ex)
             {
@@ -140,7 +137,7 @@ namespace AWS_Rzeczy.Services
             } 
         }
 
-        public async Task<Holder<string>> editClient(string login, Client client)
+        public async Task<Holder<Client>> editClient(string login, Client client)
         {
             var request = new UpdateItemRequest
             {
@@ -162,23 +159,23 @@ namespace AWS_Rzeczy.Services
                     {":newage", new AttributeValue { N = client.Age.ToString() }},
                 },
                 UpdateExpression = "SET #P = :newpwd, #N = :newname, #A = :newage",
+                ReturnValues = "ALL_NEW"
             };
 
             try
             {
                 var response = await _dynamoClient.UpdateItemAsync(request);
-                //var clientResponse = response.Attributes;
+                var clientResponse = response.Attributes;
 
-                //return Holder<Client>.Success(Client.makeFromAWSResponse(clientResponse));
-                return Holder<string>.Success("Edited client");
+                return Holder<Client>.Success(Client.makeFromAWSResponse(clientResponse));
             }
             catch (Exception ex)
             {
-                return Holder<string>.Fail(ex.Message);
+                return Holder<Client>.Fail(ex.Message);
             }
         }
 
-        public async Task<Holder<string>> deleteClient(string login)
+        public async Task<Holder<Client>> deleteClient(string login)
         {
             var request = new DeleteItemRequest
             {
@@ -189,18 +186,18 @@ namespace AWS_Rzeczy.Services
                         LOGIN_COLUMN, new AttributeValue { S = login }
                     }
                 },
+                ReturnValues = "ALL_OLD"
             };
 
             try
             {
                 var response = await _dynamoClient.DeleteItemAsync(request);
-                //var clientResponse = response.Attributes;
+                var clientResponse = response.Attributes;
 
-                //return Holder<Client>.Success(Client.makeFromAWSResponse(clientResponse));
-                return Holder<string>.Success("Deleted client");
+                return Holder<Client>.Success(Client.makeFromAWSResponse(clientResponse));
             } catch (Exception ex)
             {
-                return Holder<string>.Fail(ex.Message);
+                return Holder<Client>.Fail(ex.Message);
             }
         }
     }
