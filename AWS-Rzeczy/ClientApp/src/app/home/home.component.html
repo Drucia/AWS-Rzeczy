@@ -1,18 +1,21 @@
 <div class="home">
-    <h1>Hello in scripts which are using AWS!</h1>
-    <br />
+  <h1>Hello in scripts which are using AWS!</h1>
+  <br />
+  <div class="container">
     <h5>Scripts by Druciak:</h5>
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false">
+    <div class="row">
+      <form class="form-inline">
+        <div class="dropdown form-group col">
+          <button class="btn btn-primary dropdown-toggle mx-sm-3 mb-2"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
             Script with CRUD BD
-        </button>
-        <div class="dropdown-menu"
-             aria-labelledby="dropdownMenuButton">
+          </button>
+          <div class="dropdown-menu"
+               aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item"
                href="#"
                (click)="deleteClientTable()">Delete client table</a>
@@ -34,64 +37,86 @@
             <a class="dropdown-item"
                href="#"
                (click)="deleteLastClient()">Delete last client</a>
+          </div>
         </div>
+        <div class="form-group mx-sm-0 mb-2">
+          <input type="text" class="form-control" id="login" placeholder="Login">
+        </div>
+        <div class="form-group mx-sm-0 mb-2">
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group mx-sm-0 mb-2">
+          <input type="text" class="form-control" id="name" placeholder="Client name">
+        </div>
+        <div class="form-group mx-sm-0 mb-2">
+          <input type="number" class="form-control" id="age" placeholder="Age">
+        </div>
+        <div class="form-group mx-sm-0 mb-2">
+          <input type="number" class="form-control" id="clientNumber" placeholder="To edit or delete">
+        </div>
+      </form>
     </div>
-    <br />
-    <br />
+  </div>
+  <br />
+  <br />
+  <div>
     <h5>Scripts by Gerasimuk:</h5>
-    <br />
-    <br />
+  </div>
+  <br />
+  <br />
+  <div>
     <h5>Scripts by Demczuk:</h5>
     <div class="t-buttons">
-        <input style="margin-left: 10px;"
-               type="text"
-               [(ngModel)]="bucketName"
-               placeholder="Bucket name" />
-        <input style="margin-left: 10px;"
-               type="text"
-               [(ngModel)]="fileName"
-               placeholder="File Name" />
+      <input style="margin-left: 10px;"
+             type="text"
+             [(ngModel)]="bucketName"
+             placeholder="Bucket name" />
+      <input style="margin-left: 10px;"
+             type="text"
+             [(ngModel)]="fileName"
+             placeholder="File Name" />
 
-        <textarea style="margin-left: 10px;"
-                  type="text"
-                  [(ngModel)]="fileContent"
-                  placeholder="File content">
+      <textarea style="margin-left: 10px;"
+                type="text"
+                [(ngModel)]="fileContent"
+                placeholder="File content">
         </textarea>
     </div>
     <div style="margin-top: 10px;">
-        <button type="button"
-                class="btn btn-primary"
-                style="margin-left: 10px;"
-                (click)="CreateBucket()">
-            Create bucket
-        </button>
-        <button type="button"
-                class="btn btn-success"
-                style="margin-left: 10px;"
-                (click)="UploadToBucket()">
-            Upload to bucket
-        </button>
-        <button type="button"
-                class="btn btn-info"
-                style="margin-left: 10px;"
-                (click)="GetList()">
-            Get list from bucket
-        </button>
-        <button type="button"
-                class="btn btn-warning"
-                style="margin-left: 10px;"
-                (click)="GetFromBucket()">
-            Get from bucket
-        </button>
-        <button type="button"
-                class="btn btn-danger"
-                style="margin-left: 10px;"
-                (click)="DeleteFromBucket()">
-            Delete from bucket
-        </button>
+      <button type="button"
+              class="btn btn-primary"
+              style="margin-left: 10px;"
+              (click)="CreateBucket()">
+        Create bucket
+      </button>
+      <button type="button"
+              class="btn btn-success"
+              style="margin-left: 10px;"
+              (click)="UploadToBucket()">
+        Upload to bucket
+      </button>
+      <button type="button"
+              class="btn btn-info"
+              style="margin-left: 10px;"
+              (click)="GetList()">
+        Get list from bucket
+      </button>
+      <button type="button"
+              class="btn btn-warning"
+              style="margin-left: 10px;"
+              (click)="GetFromBucket()">
+        Get from bucket
+      </button>
+      <button type="button"
+              class="btn btn-danger"
+              style="margin-left: 10px;"
+              (click)="DeleteFromBucket()">
+        Delete from bucket
+      </button>
     </div>
-    <h5>Logs info:</h5>
-    <div *ngFor="let log of logs">
-        <i style="white-space: pre-line">{{ log }}</i>
-    </div>
+  </div>
+  <h5>Logs info:</h5>
+  <div *ngFor="let log of logs">
+    <i style="white-space: pre-line">{{ log }}</i>
+  </div>
 </div>

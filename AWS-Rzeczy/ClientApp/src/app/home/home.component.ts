@@ -21,6 +21,11 @@ export class HomeComponent {
     private fileContent: string;
     private created: boolean = false;
     private uploaded: boolean = false;
+    private login: string;
+    private password: string;
+    private name: string;
+    private age: number;
+    private toChange: number;
 
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private awsService: AWSService) {
     }
@@ -122,51 +127,57 @@ export class HomeComponent {
         return `login: ${client.login}, password: ${client.password}, name: ${client.name}, age: ${client.age}`;
     }
 
-    public updateFirstClient()
+    public updateClient()
     {
         this.logs = [];
         this.getAllClients(false);
-        if (this.currentClients.length > 0) {
-            this.logs.push("-> Updating first client...");
-            var toUpdate = this.currentClients[0];
-            toUpdate.age += 1;
+      if (this.toChange != null && this.currentClients.length <= this.toChange && this.password != null && this.name != null && this.age != null) {
+          var toUpdate = this.currentClients[this.toChange - 1];
+          this.logs.push(`-> Updating ${toUpdate.login} client...`);
+            toUpdate.name = this.name;
+            toUpdate.password = this.password;
+            toUpdate.age = this.age;
 
             this.http.post<Client>(this.baseUrl + `api/clients/${toUpdate.login}`, toUpdate).subscribe(
                 result => {
-                  this.currentClients[0] = result;
+                    this.currentClients[this.toChange - 1] = result;
                     this.logs.push(`Updated "${result.login}" age to ${result.age}`);
                 },
               error => console.error(error));
         } else {
-          this.logs.push("-> There is not enought clients...");
+          this.logs.push("-> There is not enought clients or client to change is not set...");
         }
     }
 
     public addNewClient()
     {
         this.logs = [];
-        this.logs.push("-> Adding new client...");
-        let client: Client = {
-            login: "newClient",
-            password: "haselko",
-            name: "Alabama",
-            age: 20
-        }
-        this.http.post<Message>(this.baseUrl + 'api/clients', client).subscribe(
+        if (this.login != null && this.password != null && this.name != null && this.age != null) {
+          this.logs.push("-> Adding new client...");
+          let client: Client = {
+            login: this.login,
+            password: this.password,
+            name: this.name,
+            age: this.age
+          }
+          this.http.post<Message>(this.baseUrl + 'api/clients', client).subscribe(
             result => {
-                this.logs.push(result.msg);
-                this.getAllClients(false);
+              this.logs.push(result.msg);
+              this.getAllClients(false);
             },
             error => console.error(error));
+        } else {
+          this.logs.push("Not all client fields are filled")
+        }
     }
 
-    public deleteLastClient()
+    public deleteClient()
     {
         this.logs = [];
         this.getAllClients(false);
-        if (this.currentClients.length > 0) {
-            this.logs.push("-> Deleting last client...");
-            var toDelete = this.currentClients[this.currentClients.length - 1];
+        if (this.toChange != null && this.currentClients.length <= this.toChange) {
+          var toDelete = this.currentClients[this.toChange - 1];
+          this.logs.push(`-> Deleting ${toDelete.login} client...`);
 
             this.http.delete<Client>(this.baseUrl + `api/clients/${toDelete.login}`).subscribe(
               result => {
@@ -175,7 +186,7 @@ export class HomeComponent {
               },
               error => console.error(error));
         } else {
-            this.logs.push("-> There is not enought clients...");
+            this.logs.push("-> There is not enought clients or client to delete is not set...");
         }
     }
 }
