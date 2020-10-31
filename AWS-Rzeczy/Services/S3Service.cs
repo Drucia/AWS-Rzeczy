@@ -21,8 +21,9 @@ namespace AWS_Rzeczy.Services
         [Obsolete]
 
         #region Create Bucket
-        public async Task<string> CreateBucketAsync(string bucketName)
+        public async Task<CustomResponse> CreateBucketAsync(string bucketName)
         {
+            CustomResponse bucketLocation = new CustomResponse();
             try
             {
                 if (!(await AmazonS3Util.DoesS3BucketExistAsync(s3Client, bucketName)))
@@ -36,18 +37,19 @@ namespace AWS_Rzeczy.Services
                     PutBucketResponse putBucketResponse = await s3Client.PutBucketAsync(putBucketRequest);
                 }
                 // Retrieve the bucket location.
-                string bucketLocation = await FindBucketLocationAsync(s3Client, bucketName);
-                return bucketLocation;
+                bucketLocation.Response = await FindBucketLocationAsync(s3Client, bucketName);
             }
             catch (AmazonS3Exception e)
             {
                 Console.WriteLine("Error encountered on server. Message:'{0}' when writing an object", e.Message);
+                bucketLocation.Response = string.Format("Error encountered on server. Message:'{0}' when writing an object", e.Message);
             }
             catch (Exception e)
             {
                 Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
+                bucketLocation.Response = string.Format("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
             }
-            return "Error";
+            return bucketLocation;
         }
 
 
@@ -67,59 +69,93 @@ namespace AWS_Rzeczy.Services
 
         #region Upload Object
 
-        public async Task<AmazonWebServiceResponse> UploadObjects(string key1, string key2, string bucketName)
+        public async Task<CustomResponse> UploadObjects(string fileName, string fileContent, string bucketName)
         {
+            CustomResponse response = new CustomResponse();
             try
             {
                 // 1. Put object-specify only key name for the new object.
                 var putRequest1 = new PutObjectRequest
                 {
                     BucketName = bucketName,
-                    Key = key1,
-                    ContentBody = "Hello cruel world"
+                    Key = fileName,
+                    ContentType = "text/plain",
+                    ContentBody = fileContent
                 };
 
                 PutObjectResponse response1 = await s3Client.PutObjectAsync(putRequest1);
-                // 2. Put the object-set ContentType and add metadata.
-                var putRequest2 = new PutObjectRequest
-                {
-                    BucketName = bucketName,
-                    Key = key2,
-                    FilePath = "/",
-                    ContentType = "text/plain"
-                };
-                putRequest2.Metadata.Add("x-amz-meta-title", "someTitle");
-
-                return response1;
+                response.Response = string.Format("Uploaded object {0}, status code: {1}", fileName, response1.HttpStatusCode.ToString());
             }
             catch (AmazonS3Exception e)
             {
-                Console.WriteLine(
-                        "Error encountered ***. Message:'{0}' when writing an object"
-                        , e.Message);
+                Console.WriteLine("Error encountered ***. Message:'{0}' when writing an object", e.Message);
+                response.Response = string.Format("Error encountered ***. Message:'{0}' when writing an object", e.Message);
             }
             catch (Exception e)
             {
-                Console.WriteLine(
-                    "Unknown encountered on server. Message:'{0}' when writing an object"
-                    , e.Message);
+                Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
+                response.Response = string.Format("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
             }
             AmazonWebServiceResponse badResponse = new AmazonWebServiceResponse();
             badResponse.HttpStatusCode = System.Net.HttpStatusCode.BadRequest;
-            return badResponse;
+            return response;
         }
 
         #endregion
 
+        #region GetList
+        public async Task<string> GetList(string bucketName)
+        {
+            string items = "";
+            try
+            {
+                ListObjectsV2Request request = new ListObjectsV2Request
+                {
+                    BucketName = bucketName,
+                    MaxKeys = 10
+                };
+                ListObjectsV2Response response;
+                do
+                {
+                    response = await s3Client.ListObjectsV2Async(request);
+
+                    // Process the response.
+                    foreach (S3Object entry in response.S3Objects)
+                    {
+                        items += ("key = {0} size = {1} modified = {2}\n",
+                            entry.Key, entry.Size, entry.LastModified.ToShortDateString());
+                    }
+                    Console.WriteLine("Next Continuation Token: {0}", response.NextContinuationToken);
+                    request.ContinuationToken = response.NextContinuationToken;
+                } while (response.IsTruncated);
+
+                return items;
+            }
+            catch (AmazonS3Exception amazonS3Exception)
+            {
+                Console.WriteLine("S3 error occurred. Exception: " + amazonS3Exception.ToString());
+                Console.ReadKey();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.ToString());
+                Console.ReadKey();
+            }
+            if (items == "")
+                items = "No files in a bucket";
+            return items;
+        }
+        #endregion
+
         #region Get Object
-        public async Task<CustomResponse> GetFromBucket(string key, string bucketName)
+        public async Task<CustomResponse> GetFromBucket(string fileName, string bucketName)
         {
             string contents;
             //if using .NET Core, make sure to use await keyword and async method
             GetObjectRequest request = new GetObjectRequest
             {
                 BucketName = bucketName,
-                Key = key
+                Key = fileName
             };
 
             ResponseHeaderOverrides responseHeaders = new ResponseHeaderOverrides();
@@ -145,31 +181,34 @@ namespace AWS_Rzeczy.Services
         #endregion
 
         #region Delete Object
-        public async Task<AmazonWebServiceResponse> DeleteObject(string key, string bucketName)
+        public async Task<CustomResponse> DeleteObject(string fileName, string bucketName)
         {
+            CustomResponse response = new CustomResponse();
             try
             {
                 var deleteObjectRequest = new DeleteObjectRequest
                 {
                     BucketName = bucketName,
-                    Key = key
+                    Key = fileName
                 };
 
                 Console.WriteLine("Deleting an object");
-                var result = await s3Client.DeleteObjectAsync(deleteObjectRequest);
-                return result;
+                DeleteObjectResponse result = await s3Client.DeleteObjectAsync(deleteObjectRequest);
+
+                response.Response = string.Format("Deleted object {0} (if existed), status code: {1}", fileName, result.HttpStatusCode.ToString());
             }
             catch (AmazonS3Exception e)
             {
                 Console.WriteLine("Error encountered on server. Message:'{0}' when writing an object", e.Message);
+                response.Response = string.Format("Error encountered on server. Message:'{0}' when writing an object", e.Message);
             }
             catch (Exception e)
             {
                 Console.WriteLine("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
+                response.Response = string.Format("Unknown encountered on server. Message:'{0}' when writing an object", e.Message);
             }
-            AmazonWebServiceResponse badResponse = new AmazonWebServiceResponse();
-            badResponse.HttpStatusCode = System.Net.HttpStatusCode.BadRequest;
-            return badResponse;
+
+            return response;
         }
         #endregion
     }

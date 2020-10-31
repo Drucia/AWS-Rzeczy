@@ -116,30 +116,37 @@ namespace AWS_Rzeczy.Controllers
         #region Tomek
         [HttpPost]
         [Route("s3/create")]
-        public async Task<string> CreateBucket([FromBody] S3RquestBody body)
+        public async Task<CustomResponse> CreateBucket([FromBody] S3RquestBody body)
         {
-            return await _s3Service.CreateBucketAsync(body.name);
+            return await _s3Service.CreateBucketAsync(body.bucketName);
         }
 
 
         [HttpPost]
         [Route("s3/delete")]
-        public async Task<AmazonWebServiceResponse> DeleteFromBucket([FromBody] S3RquestBody body)
+        public async Task<CustomResponse> DeleteFromBucket([FromBody] S3RquestBody body)
         {
-            return await _s3Service.DeleteObject(body.key1, body.name);
+            return await _s3Service.DeleteObject(body.fileName, body.bucketName);
+        }
+
+        [HttpPost]
+        [Route("s3/getlist")]
+        public async Task<CustomResponse> GetListFromBucket([FromBody] S3RquestBody body)
+        {
+            return new CustomResponse() { Response = await _s3Service.GetList(body.bucketName) };
         }
 
         [HttpPost]
         [Route("s3/get")]
         public async Task<CustomResponse> GetFromBucket([FromBody] S3RquestBody body)
         {
-            return await _s3Service.GetFromBucket(body.key1, body.name);
+            return await _s3Service.GetFromBucket(body.fileName, body.bucketName);
         }
         [HttpPost]
         [Route("s3/upload")]
-        public async Task<AmazonWebServiceResponse> UploadToBucket([FromBody] S3RquestBody body)
+        public async Task<CustomResponse> UploadToBucket([FromBody] S3RquestBody body)
         {
-            return await _s3Service.UploadObjects(body.key1, body.key2, body.name);
+            return await _s3Service.UploadObjects(body.fileName, body.fileContent, body.bucketName);
         }
         #endregion
 

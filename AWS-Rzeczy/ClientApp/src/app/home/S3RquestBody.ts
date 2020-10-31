@@ -1,5 +1,5 @@
 export class S3RquestBody {
-    public name: string;
-    public key1: string;
-    public key2: string;
+    public bucketName: string;
+    public fileName: string;
+    public fileContent: string;
 }

@@ -12,13 +12,13 @@ import { S3RquestBody } from './S3RquestBody';
 })
 
 export class HomeComponent {
-    public logs = ["nananna"];
+    public logs = [""];
 
     private startsClients: Client[] = [new Client("log", "haselko", "Ola", 23), new Client("log2", "haselko2", "Maciej", 30), new Client("log3", "haselko3", "Kasia", 11)];
     private currentClients: Client[] = [];
     private bucketName: string;
-    private key1: string;
-    private key2: string;
+    private fileName: string;
+    private fileContent: string;
     private created: boolean = false;
     private uploaded: boolean = false;
 
@@ -28,29 +28,42 @@ export class HomeComponent {
 
     public CreateBucket() {
         this.created = true;
-        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        let body: S3RquestBody = { fileName: this.fileName, fileContent: this.fileContent, bucketName: this.bucketName }
         this.awsService.CreateBucket(body).subscribe(result => {
-            this.logs.push(result);
+            this.logs.push("CreateBucket");
+            this.logs.push(result.response);
         })
     }
     public UploadToBucket() {
 
         this.uploaded = true;
-        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        let body: S3RquestBody = { fileName: this.fileName, fileContent: this.fileContent, bucketName: this.bucketName }
         this.awsService.UploadToBucket(body).subscribe(result => {
-            this.logs.push(result);
+            this.logs.push("UploadToBucket");
+            this.logs.push(result.response);
         })
     }
+
+    public GetList() {
+        let body: S3RquestBody = { fileName: this.fileName, fileContent: this.fileContent, bucketName: this.bucketName }
+        this.awsService.GetListBucket(body).subscribe(result => {
+            this.logs.push("GetList");
+            this.logs.push(result.response);
+        })
+    }
+
     public GetFromBucket() {
-        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        let body: S3RquestBody = { fileName: this.fileName, fileContent: this.fileContent, bucketName: this.bucketName }
         this.awsService.GetFromBucket(body).subscribe(result => {
-            this.logs.push(result);
+            this.logs.push("GetFromBucket " + this.fileName);
+            this.logs.push(result.response);
         })
     }
     public DeleteFromBucket() {
-        let body: S3RquestBody = { key1: this.key1, key2: this.key2, name: this.bucketName }
+        let body: S3RquestBody = { fileName: this.fileName, fileContent: this.fileContent, bucketName: this.bucketName }
         this.awsService.DeleteFromBucket(body).subscribe(result => {
-            this.logs.push(result);
+            this.logs.push("DeleteFromBucket");
+            this.logs.push(result.response);
         })
     }
 

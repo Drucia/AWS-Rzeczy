@@ -17,6 +17,9 @@ export class AWSService {
     public DeleteFromBucket(body: S3RquestBody): Observable<any> {
         return this.http.post<any>(this.baseUrl + 'api/s3/delete', body);
     }
+    public GetListBucket(body: S3RquestBody): Observable<any> {
+        return this.http.post<any>(this.baseUrl + 'api/s3/getlist', body);
+    }
 
     public GetFromBucket(body: S3RquestBody): Observable<any> {
         return this.http.post<any>(this.baseUrl + 'api/s3/get', body);
