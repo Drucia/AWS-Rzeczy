@@ -131,12 +131,12 @@ export class HomeComponent {
     {
         this.logs = [];
         this.getAllClients(false);
-      if (this.toChange != null && this.currentClients.length <= this.toChange && this.password != null && this.name != null && this.age != null) {
+      if (this.toChange != null && this.toChange <= this.currentClients.length && (this.password != null || this.name != null || this.age != null)) {
           var toUpdate = this.currentClients[this.toChange - 1];
           this.logs.push(`-> Updating ${toUpdate.login} client...`);
-            toUpdate.name = this.name;
-            toUpdate.password = this.password;
-            toUpdate.age = this.age;
+            toUpdate.name = this.name != null ? this.name : toUpdate.name;
+            toUpdate.password = this.password != null ? this.password : toUpdate.password;
+            toUpdate.age = this.age != null ? this.age : toUpdate.age;
 
             this.http.post<Client>(this.baseUrl + `api/clients/${toUpdate.login}`, toUpdate).subscribe(
                 result => {
@@ -175,7 +175,7 @@ export class HomeComponent {
     {
         this.logs = [];
         this.getAllClients(false);
-        if (this.toChange != null && this.currentClients.length <= this.toChange) {
+        if (this.toChange != null && this.toChange <= this.currentClients.length) {
           var toDelete = this.currentClients[this.toChange - 1];
           this.logs.push(`-> Deleting ${toDelete.login} client...`);
 
