@@ -1,5 +1,7 @@
 using Amazon;
+using Amazon.CloudWatch;
 using Amazon.DynamoDBv2;
+using Amazon.EC2;
 using Amazon.Runtime;
 using Amazon.S3;
 using AWS_Rzeczy.Services;
@@ -41,6 +43,9 @@ namespace AWS_Rzeczy
             services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>(_ => new AmazonDynamoDBClient(sessionCredentials, region));
             services.AddTransient<IAmazonS3, AmazonS3Client>(_ => new AmazonS3Client(sessionCredentials, region));
             services.AddTransient<IS3Service, S3Service>();
+            services.AddTransient<IAmazonEC2, AmazonEC2Client>(_ => new AmazonEC2Client(sessionCredentials, region));
+            services.AddTransient<IAmazonCloudWatch, AmazonCloudWatchClient>(_ => new AmazonCloudWatchClient(sessionCredentials, region));
+            services.AddTransient<ICloudWatchService, CloudWatchService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

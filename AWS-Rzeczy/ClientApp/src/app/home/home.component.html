@@ -1,120 +1,161 @@
 <div class="home">
-  <h1>Hello in scripts which are using AWS!</h1>
-  <br />
-  <div class="container">
-    <h5>Scripts by Druciak:</h5>
-    <div class="row form-inline">
-        <div class="dropdown form-group col">
-          <button class="btn btn-primary dropdown-toggle mx-sm-3 mb-2"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false">
-            Script with CRUD BD
-          </button>
-          <div class="dropdown-menu"
-               aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item"
-               href="#"
-               (click)="deleteClientTable()">Delete client table</a>
-            <a class="dropdown-item"
-               href="#"
-               (click)="createClientTable()">Create client table</a>
-            <a class="dropdown-item"
-               href="#"
-               (click)="insertClientsList()">Insert clients list</a>
-            <a class="dropdown-item"
-               href="#"
-               (click)="getAllClients(true)">Get all clients</a>
-            <a class="dropdown-item"
-               href="#"
-               (click)="updateClient()">Update client</a>
-            <a class="dropdown-item"
-               href="#"
-               (click)="addNewClient()">Add new client</a>
-            <a class="dropdown-item"
-               href="#"
-               (click)="deleteClient()">Delete client</a>
-          </div>
-        </div>
-        <div class="form-group mx-sm-0 mb-2">
-          <input type="text" class="form-control" [(ngModel)]="login" placeholder="Login">
-        </div>
-        <div class="form-group mx-sm-0 mb-2">
-          <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
-        </div>
-        <div class="form-group mx-sm-0 mb-2">
-          <input type="text" class="form-control" [(ngModel)]="name" placeholder="Client name">
-        </div>
-        <div class="form-group mx-sm-0 mb-2">
-          <input type="number" class="form-control" [(ngModel)]="age" placeholder="Age">
-        </div>
-        <div class="form-group mx-sm-0 mb-2">
-          <input type="number" class="form-control" [(ngModel)]="toChange" placeholder="To edit or delete">
+    <h1>Hello in scripts which are using AWS!</h1>
+    <br />
+    <div class="container">
+        <h5>Scripts by Druciak:</h5>
+        <div class="row form-inline">
+            <div class="dropdown form-group col">
+                <button class="btn btn-primary dropdown-toggle mx-sm-3 mb-2"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                    Script with CRUD BD
+                </button>
+                <div class="dropdown-menu"
+                     aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item"
+                       href="#"
+                       (click)="deleteClientTable()">Delete client table</a>
+                    <a class="dropdown-item"
+                       href="#"
+                       (click)="createClientTable()">Create client table</a>
+                    <a class="dropdown-item"
+                       href="#"
+                       (click)="insertClientsList()">Insert clients list</a>
+                    <a class="dropdown-item"
+                       href="#"
+                       (click)="getAllClients(true)">Get all clients</a>
+                    <a class="dropdown-item"
+                       href="#"
+                       (click)="updateClient()">Update client</a>
+                    <a class="dropdown-item"
+                       href="#"
+                       (click)="addNewClient()">Add new client</a>
+                    <a class="dropdown-item"
+                       href="#"
+                       (click)="deleteClient()">Delete client</a>
+                </div>
+            </div>
+            <div class="form-group mx-sm-0 mb-2">
+                <input type="text"
+                       class="form-control"
+                       [(ngModel)]="login"
+                       placeholder="Login">
+            </div>
+            <div class="form-group mx-sm-0 mb-2">
+                <input type="password"
+                       class="form-control"
+                       [(ngModel)]="password"
+                       placeholder="Password">
+            </div>
+            <div class="form-group mx-sm-0 mb-2">
+                <input type="text"
+                       class="form-control"
+                       [(ngModel)]="name"
+                       placeholder="Client name">
+            </div>
+            <div class="form-group mx-sm-0 mb-2">
+                <input type="number"
+                       class="form-control"
+                       [(ngModel)]="age"
+                       placeholder="Age">
+            </div>
+            <div class="form-group mx-sm-0 mb-2">
+                <input type="number"
+                       class="form-control"
+                       [(ngModel)]="toChange"
+                       placeholder="To edit or delete">
+            </div>
         </div>
     </div>
-  </div>
-  <br />
-  <br />
-  <div>
-    <h5>Scripts by Gerasimuk:</h5>
-  </div>
-  <br />
-  <br />
-  <div>
-    <h5>Scripts by Demczuk:</h5>
-    <div class="t-buttons">
-      <input style="margin-left: 10px;"
-             type="text"
-             [(ngModel)]="bucketName"
-             placeholder="Bucket name" />
-      <input style="margin-left: 10px;"
-             type="text"
-             [(ngModel)]="fileName"
-             placeholder="File Name" />
+    <br />
+    <br />
+    <div>
+        <h5>Scripts by Gerasimuk:</h5>
+    </div>
+    <br />
+    <input style="margin-left: 10px;"
+           type="text"
+           [(ngModel)]="watchName"
+           placeholder="Alert name" />
 
-      <textarea style="margin-left: 10px;"
-                type="text"
-                [(ngModel)]="fileContent"
-                placeholder="File content">
-        </textarea>
-    </div>
     <div style="margin-top: 10px;">
-      <button type="button"
-              class="btn btn-primary"
-              style="margin-left: 10px;"
-              (click)="CreateBucket()">
-        Create bucket
-      </button>
-      <button type="button"
-              class="btn btn-success"
-              style="margin-left: 10px;"
-              (click)="UploadToBucket()">
-        Upload to bucket
-      </button>
-      <button type="button"
-              class="btn btn-info"
-              style="margin-left: 10px;"
-              (click)="GetList()">
-        Get list from bucket
-      </button>
-      <button type="button"
-              class="btn btn-warning"
-              style="margin-left: 10px;"
-              (click)="GetFromBucket()">
-        Get from bucket
-      </button>
-      <button type="button"
-              class="btn btn-danger"
-              style="margin-left: 10px;"
-              (click)="DeleteFromBucket()">
-        Delete from bucket
-      </button>
+        <button type="button"
+                class="btn btn-primary"
+                style="margin-left: 10px;"
+                (click)="CreateWatch()">
+            Create alert
+        </button>
+        <button type="button"
+                class="btn btn-danger"
+                style="margin-left: 10px;"
+                (click)="DeleteAlert()">
+                Delete alert
+        </button>
+        <button type="button"
+                class="btn btn-info"
+                style="margin-left: 10px;"
+                (click)="DescribeAlert()">
+                Describe alert
+</button>
     </div>
-  </div>
-  <h5>Logs info:</h5>
-  <div *ngFor="let log of logs">
-    <i style="white-space: pre-line">{{ log }}</i>
-  </div>
+
+    <br />
+    <div>
+        <h5>Scripts by Demczuk:</h5>
+        <div class="t-buttons">
+            <input style="margin-left: 10px;"
+                   type="text"
+                   [(ngModel)]="bucketName"
+                   placeholder="Bucket name" />
+            <input style="margin-left: 10px;"
+                   type="text"
+                   [(ngModel)]="fileName"
+                   placeholder="File Name" />
+
+            <textarea style="margin-left: 10px;"
+                      type="text"
+                      [(ngModel)]="fileContent"
+                      placeholder="File content">
+        </textarea>
+        </div>
+        <div style="margin-top: 10px;">
+            <button type="button"
+                    class="btn btn-primary"
+                    style="margin-left: 10px;"
+                    (click)="CreateBucket()">
+                Create bucket
+            </button>
+            <button type="button"
+                    class="btn btn-success"
+                    style="margin-left: 10px;"
+                    (click)="UploadToBucket()">
+                Upload to bucket
+            </button>
+            <button type="button"
+                    class="btn btn-info"
+                    style="margin-left: 10px;"
+                    (click)="GetList()">
+                Get list from bucket
+            </button>
+            <button type="button"
+                    class="btn btn-warning"
+                    style="margin-left: 10px;"
+                    (click)="GetFromBucket()">
+                Get from bucket
+            </button>
+            <button type="button"
+                    class="btn btn-danger"
+                    style="margin-left: 10px;"
+                    (click)="DeleteFromBucket()">
+                Delete from bucket
+            </button>
+        </div>
+    </div>
+    <h5>Logs info:</h5>
+    <div *ngFor="let log of logs">
+        <i style="white-space: pre-line">{{ log }}</i>
+    </div>
 </div>

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Amazon.CloudWatch;
+using Amazon.CloudWatch.Model;
 using Amazon.DynamoDBv2;
 using Amazon.Runtime;
 using AWS_Rzeczy.Models;
@@ -16,18 +18,25 @@ namespace AWS_Rzeczy.Controllers
         private readonly ILogger<AWSController> _logger;
         private readonly IAmazonDynamoDB _dynamoClient;
         private readonly IS3Service _s3Service;
+        private readonly IAmazonCloudWatch _amazonCloudWatchClient;
+        private readonly ICloudWatchService _cloudWatchService;
+
+
 
 
         // -- SERVICES -- //
         private DynamoDBService _dynamoService;
+        
 
 
-        public AWSController(ILogger<AWSController> logger, IAmazonDynamoDB amazonDynamoDBClient, IS3Service s3Service)
+        public AWSController(ILogger<AWSController> logger, IAmazonDynamoDB amazonDynamoDBClient, IS3Service s3Service, IAmazonCloudWatch  amazonCloudWatch, ICloudWatchService cloudWatchService)
         {
             _logger = logger;
             _dynamoClient = amazonDynamoDBClient;
             _s3Service = s3Service;
             _dynamoService = new DynamoDBService(_dynamoClient);
+            _amazonCloudWatchClient = amazonCloudWatch;
+            this._cloudWatchService = cloudWatchService;
         }
 
         #region Ola D
@@ -151,7 +160,29 @@ namespace AWS_Rzeczy.Controllers
         #endregion
 
         #region Ola G
+        [HttpPut]
+        [Route("cloudwatch/putalarm")]
+        public async Task<CustomResponse> PutMetricAlarm([FromBody] WatchRequestBody requestBody)
+        {
+            return await _cloudWatchService.PutMetricAlarm(requestBody);
+        }
+        
+        [HttpPost]
+        [Route("cloudwatch/delete")]
+        public async Task<CustomResponse> DeleteAlarm([FromBody] WatchRequestBody requestBody)
+        {
+            return await _cloudWatchService.DeleteAlarm(requestBody);
+        }
+
+        [HttpPost]
+        [Route("cloudwatch/describe")]
+        public async Task<CustomResponse> DescribeAlarm([FromBody] WatchRequestBody requestBody)
+        {
+            return await _cloudWatchService.DescribeAlarm(requestBody);
+        }
 
         #endregion
+
+
     }
 }
