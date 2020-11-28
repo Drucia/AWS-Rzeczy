@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-11-28T12:40:42.150Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="bJlncaggQf6efUi2v3Qv" version="13.6.5" pages="3">
+<mxfile host="65bd71144e" modified="2020-11-28T12:41:56.977Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="kF2lWwQev86pYDvXGQHy" version="13.6.5" pages="3">
     <diagram id="LmuK0iRXnz72Fh-s3bJC" name="Logowanie / Zarządzanie Użytkownikami">
         <mxGraphModel dx="1736" dy="1188" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -176,7 +176,7 @@
                         <mxPoint x="-25.43" y="9" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="OA9pqO5p4BT9uitg4Vxe-11" value="Zarządzanie zespołami" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" parent="lDVDiWzpCGMbZkUDvq3X-1" vertex="1">
+                <mxCell id="OA9pqO5p4BT9uitg4Vxe-11" value="Zarządzanie zespołami" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" parent="lDVDiWzpCGMbZkUDvq3X-1" vertex="1">
                     <mxGeometry x="890" y="410" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="OA9pqO5p4BT9uitg4Vxe-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-14" target="OA9pqO5p4BT9uitg4Vxe-23" edge="1">
@@ -539,10 +539,10 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="jZsVlsGDXqF00g-XMzpk-3" value="Tłumacz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" parent="J9_IvQw69B-Giktkhso--1" vertex="1">
+                <mxCell id="jZsVlsGDXqF00g-XMzpk-3" value="Tłumacz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" parent="J9_IvQw69B-Giktkhso--1" vertex="1">
                     <mxGeometry x="1534" y="560" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="8Lxz0DTaulV0aWid29GQ-1" value="Zarządzanie zadaniami w zepołach" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="J9_IvQw69B-Giktkhso--1">
+                <mxCell id="8Lxz0DTaulV0aWid29GQ-1" value="Zarządzanie zadaniami w zepołach" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="J9_IvQw69B-Giktkhso--1">
                     <mxGeometry x="881" y="420" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="8Lxz0DTaulV0aWid29GQ-2" value="Baza-Zadań" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;strokeColor=#3A5431;fontColor=#ffffff;" vertex="1" parent="J9_IvQw69B-Giktkhso--1">
