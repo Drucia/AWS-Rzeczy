@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-28T10:57:56.712Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="64SfCIjvBDwvIr8r7_vA" version="13.10.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2020-11-28T10:58:56.886Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="Cpn1nxImfvqLoBf4waps" version="13.10.4" type="github" pages="3">
   <diagram id="LmuK0iRXnz72Fh-s3bJC" name="Logowanie / Zarządzanie Użytkownikami">
     <mxGraphModel dx="1673" dy="896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -399,7 +399,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jZsVlsGDXqF00g-XMzpk-6" value="Tłumacz zadania" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" edge="1" parent="J9_IvQw69B-Giktkhso--1" source="J9_IvQw69B-Giktkhso--18" target="jZsVlsGDXqF00g-XMzpk-3">
+        <mxCell id="jZsVlsGDXqF00g-XMzpk-6" value="Wybierz język" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" edge="1" parent="J9_IvQw69B-Giktkhso--1" source="J9_IvQw69B-Giktkhso--18" target="jZsVlsGDXqF00g-XMzpk-3">
           <mxGeometry x="0.2362" relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1594" y="850" />
