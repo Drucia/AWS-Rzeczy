@@ -1,1 +1,324 @@
-<mxfile host="app.diagrams.net" modified="2020-11-28T09:58:36.107Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="RfBFd_k0W79mRaRY1cXA" version="13.10.4" type="github"><diagram id="LmuK0iRXnz72Fh-s3bJC" name="Page-1">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</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-11-28T10:19:14.772Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="WEKuolu_6Q9-RKcWpbOL" version="13.10.4" type="github" pages="2">
+  <diagram id="LmuK0iRXnz72Fh-s3bJC" name="Logowanie / Zarządzanie Użytkownikami">
+    <mxGraphModel dx="1673" dy="896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="160" width="680" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="360" width="680" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="590" width="680" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-4" value="AWS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="730" y="230" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-6" value="Endpoint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="730" y="430" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-7" value="Widok" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="740" y="670" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.413;exitY=-0.036;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="e5dS4gaMDLxEylvo_MKh-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120.00000000000006" y="649.9999999999999" as="sourcePoint" />
+            <mxPoint x="280.44" y="502.16" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-14" value="Zaloguj się" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e5dS4gaMDLxEylvo_MKh-13" vertex="1" connectable="0">
+          <mxGeometry x="0.3529" y="4" relative="1" as="geometry">
+            <mxPoint y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-9" value="Logowanie" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="90" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="e5dS4gaMDLxEylvo_MKh-10" target="e5dS4gaMDLxEylvo_MKh-23" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-19" value="Pobierz dane&lt;br&gt;użytkownika" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e5dS4gaMDLxEylvo_MKh-18" vertex="1" connectable="0">
+          <mxGeometry x="0.2532" y="-1" relative="1" as="geometry">
+            <mxPoint x="-25.43" y="19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-10" value="Uwierzytelnienie / Autoryzacja" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="e5dS4gaMDLxEylvo_MKh-11" target="e5dS4gaMDLxEylvo_MKh-24" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-20" value="Odczyt" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e5dS4gaMDLxEylvo_MKh-17" vertex="1" connectable="0">
+          <mxGeometry x="-0.1733" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-11" value="DynamoDB" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" parent="1" source="e5dS4gaMDLxEylvo_MKh-21" target="e5dS4gaMDLxEylvo_MKh-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="500" />
+              <mxPoint x="150" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-38" value="Dodaj / edytuj / usuń użytkownika" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e5dS4gaMDLxEylvo_MKh-36" vertex="1" connectable="0">
+          <mxGeometry x="-0.3395" y="-2" relative="1" as="geometry">
+            <mxPoint x="-2" y="39.17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-21" value="Zarządzanie użytkownikami" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="300" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;fillColor=#ffffff;" parent="1" source="e5dS4gaMDLxEylvo_MKh-23" target="e5dS4gaMDLxEylvo_MKh-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-40" value="Dodanie / edytuj / usuń użytkownika" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e5dS4gaMDLxEylvo_MKh-39" vertex="1" connectable="0">
+          <mxGeometry x="-0.1388" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-23" value="Baza-Użytkownicy" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" parent="1" source="e5dS4gaMDLxEylvo_MKh-24" target="e5dS4gaMDLxEylvo_MKh-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="290" />
+              <mxPoint x="170" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-31" value="Zapis / Kasowanie" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="e5dS4gaMDLxEylvo_MKh-30" vertex="1" connectable="0">
+          <mxGeometry x="0.3686" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-24" value="DynamoDB" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-27" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;fillColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="e5dS4gaMDLxEylvo_MKh-23" target="e5dS4gaMDLxEylvo_MKh-24" edge="1">
+          <mxGeometry x="-0.25" y="10" width="160" relative="1" as="geometry">
+            <mxPoint x="450" y="440" as="sourcePoint" />
+            <mxPoint x="520" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="500" y="440" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-42" value="Admin" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-128.png" parent="1" vertex="1">
+          <mxGeometry x="740" y="840" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-45" value="Pracownik" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/builder_worker_helmet-128.png" parent="1" vertex="1">
+          <mxGeometry x="590" y="840" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-47" value="Menadżer" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/Crown-128.png" parent="1" vertex="1">
+          <mxGeometry x="660" y="830" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-50" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/builder_worker_helmet-128.png" parent="1" vertex="1">
+          <mxGeometry x="80" y="690" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-51" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/Crown-128.png" parent="1" vertex="1">
+          <mxGeometry x="105" y="690" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-52" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-128.png" parent="1" vertex="1">
+          <mxGeometry x="130" y="695" width="25" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="e5dS4gaMDLxEylvo_MKh-53" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-128.png" parent="1" vertex="1">
+          <mxGeometry x="401" y="695" width="25" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Y09SEBUBqhmrg7Iw147y" name="Zespoły">
+    <mxGraphModel dx="358" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="lDVDiWzpCGMbZkUDvq3X-0" />
+        <mxCell id="lDVDiWzpCGMbZkUDvq3X-1" parent="lDVDiWzpCGMbZkUDvq3X-0" />
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-0" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="900" y="160" width="680" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="900" y="360" width="680" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="900" y="590" width="680" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-3" value="AWS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1590" y="230" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-4" value="Endpoint" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1590" y="430" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-5" value="Widok" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1600" y="660" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-11" target="OA9pqO5p4BT9uitg4Vxe-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-10" value="CRUD zespołu" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-9">
+          <mxGeometry x="0.2532" y="-1" relative="1" as="geometry">
+            <mxPoint x="-25.43" y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-11" value="Zarządzanie zespołami" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="920" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-14" target="OA9pqO5p4BT9uitg4Vxe-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1450" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-13" value="Odczyt" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-12">
+          <mxGeometry x="-0.1733" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-14" value="DynamoDB" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="940" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-17" target="OA9pqO5p4BT9uitg4Vxe-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1220" y="500" />
+              <mxPoint x="1010" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-16" value="Dodaj / usuń zespół" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-15">
+          <mxGeometry x="-0.3395" y="-2" relative="1" as="geometry">
+            <mxPoint x="24" y="29.17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-17" target="OA9pqO5p4BT9uitg4Vxe-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-34" value="Edytuj zespół" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-33">
+          <mxGeometry x="-0.1214" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-17" value="Zespoły" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1160" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;fillColor=#ffffff;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-20" target="OA9pqO5p4BT9uitg4Vxe-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1210" y="310" />
+              <mxPoint x="1000" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-19" value="CRUD zespołu" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-18">
+          <mxGeometry x="-0.1388" y="-1" relative="1" as="geometry">
+            <mxPoint x="-9.17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-20" target="OA9pqO5p4BT9uitg4Vxe-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-48" value="CRD użytkownika w zespole" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-47">
+          <mxGeometry x="0.2263" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-20" value="Baza-Zespoły" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1180" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-23" target="OA9pqO5p4BT9uitg4Vxe-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1410" y="290" />
+              <mxPoint x="1030" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-22" value="Zapis / Kasowanie" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-21">
+          <mxGeometry x="0.3686" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-23" value="DynamoDB" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1390" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-24" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;fillColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-20" target="OA9pqO5p4BT9uitg4Vxe-23">
+          <mxGeometry x="-0.25" y="10" width="160" relative="1" as="geometry">
+            <mxPoint x="1310" y="440" as="sourcePoint" />
+            <mxPoint x="1380" y="440" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1360" y="440" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-25" value="Admin" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1600" y="840" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-26" value="Pracownik" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/builder_worker_helmet-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1450" y="840" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-27" value="Menadżer" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/Crown-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1520" y="830" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-28" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/builder_worker_helmet-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="930" y="855" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-30" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="980" y="860" width="25" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-31" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1255" y="695" width="25" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-42" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/Crown-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1090" y="520" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fillColor=#ffffff;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1" source="OA9pqO5p4BT9uitg4Vxe-49" target="OA9pqO5p4BT9uitg4Vxe-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="950" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-49" value="Szczegóły Zespołu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="960" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="1040" y="420" as="sourcePoint" />
+            <mxPoint x="1180" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-51" value="CRD użytkownika&lt;br&gt;&amp;nbsp;w zespole" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="OA9pqO5p4BT9uitg4Vxe-50">
+          <mxGeometry x="0.2532" y="-1" relative="1" as="geometry">
+            <mxPoint x="-22.5" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-53" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/shopping-and-retail-15/512/Crown-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1030" y="690" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OA9pqO5p4BT9uitg4Vxe-54" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Viking-128.png" vertex="1" parent="lDVDiWzpCGMbZkUDvq3X-1">
+          <mxGeometry x="1060" y="695" width="25" height="25" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
